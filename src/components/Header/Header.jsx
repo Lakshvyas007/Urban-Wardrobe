@@ -1,11 +1,9 @@
 import "./header.css";
 
-const Title = () => <h1>Food Zilla</h1>;
-
 const Header = () => {
   return (
     <div className="header">
-      <Title />
+      <h2 className="text-4xl font-bold ">Food Zilla</h2>
       <div className="navItems">
         <ul>
           <li>Home</li>
