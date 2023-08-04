@@ -1,29 +1,38 @@
-const Card = (props) => {
-  const source = props.source;
+const Card = ({image, brandname, description, price, rating }) => {
+
   return (
-    <div className="max-w-sm text-center h-auto m-5 flex justify-center items-center flex-col bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-      <div className="max-w-sm m-3">
-        <img className="m-1 max-w-full h-auto" src={source} alt="img" />
+    <div className="text-center mt-5 w-80 h-auto m-3 flex justify-center items-center flex-col bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+      <div className="p-1 mt-1 ">
+        <img className="max-w-full h-auto" src={image} alt="img" />
       </div>
-      <div className="p-5">
+      <div className="p-3">
         <a href="#">
-          <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-            Dharmendra Enterprises
+          <h5 className="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+            {brandname}
           </h5>
         </a>
-        <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-          Here are the biggest enterprise technology acquisitions of 2021 so
-          far, in reverse chronological order.
+        <p className="mb-2 font-normal text-gray-700 dark:text-gray-400">
+          {description}
         </p>
-        <a
-          href="#"
-          className="px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-        >
-          Buy Now
-        </a>
+        <div className="flex justify-around items-center text-center">
+          <p className="mx-2 font-bold text-gray-700 dark:text-gray-400">
+            {price}
+          </p>
+          <p className="mx-2 font-bold text-gray-700 dark:text-gray-400">
+          Rating {rating} 
+          </p>
+        </div>
+          <button className="mx-2 mt-3 px-3 py-1.5 bg-inheritrounded-lg bg-blue-700">
+            Buy Now 
+          </button>
       </div>
     </div>
   );
 };
 
 export default Card;
+
+
+
+// You can continue adding more items in a similar format.
+
