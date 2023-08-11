@@ -28,7 +28,7 @@ function App() {
       id: 3,
       image: "src/assets/download.jpeg",
       brandname: "Nike",
-      description: "Nike Air Men's Shoes (Black/White)",
+      description: "Nike Men's Shoes (Black/White)",
       category: "shoes",
       rating: "★★★★★",
       price: "129/$",
@@ -46,7 +46,7 @@ function App() {
       id: 5,
       image: "src/assets/download.jpeg",
       brandname: "Puma",
-      description: "Puma Graphic Men's T-Shirt (White)",
+      description: "Puma Men's T-Shirt (White)",
       category: "tshirt",
       rating: "★★★★",
       price: "349/$",
@@ -64,7 +64,7 @@ function App() {
       id: 7,
       image: "src/assets/download.jpeg",
       brandname: "Converse",
-      description: "Converse Chuck Taylor All Star High-Top Sneakers (Black)",
+      description: "Converse High-Top Sneakers (Black)",
       category: "shoes",
       rating: "★★★★",
       price: "59/$",
@@ -73,47 +73,47 @@ function App() {
       id: 8,
       image: "src/assets/download.jpeg",
       brandname: "Wrangler",
-      description: "Wrangler Slim Fit Stretch Jeans (Dark Wash)",
+      description: "Wrangler Slim Fit Jeans (Dark Wash)",
       category: "jeans",
       rating: "★★★",
       price: "79/$",
     },
-    {
-      id: 9,
-      image: "src/assets/download.jpeg",
-      brandname: "Puma",
-      description: "Puma Essential Logo Women's T-Shirt (Pink)",
-      category: "tshirt",
-      rating: "★★★★★",
-      price: "299/$",
-    },
-    {
-      id: 10,
-      image: "src/assets/download.jpeg",
-      brandname: "Adidas",
-      description: "Adidas Essentials 3-Stripes Hoodie (Black)",
-      category: "hoodie",
-      rating: "★★★★",
-      price: "599/$",
-    },
-    {
-      id: 11,
-      image: "src/assets/download.jpeg",
-      brandname: "Nike",
-      description: "Nike Renew Run Women's Running Shoes (Pink/White)",
-      category: "shoes",
-      rating: "★★★★",
-      price: "109/$",
-    },
-    {
-      id: 12,
-      image: "src/assets/download.jpeg",
-      brandname: "Levi's",
-      description: "Levi's 511 Slim Fit Jeans (Black)",
-      category: "jeans",
-      rating: "★★★★★",
-      price: "99/$",
-    },
+    // {
+    //   id: 9,
+    //   image: "src/assets/download.jpeg",
+    //   brandname: "Puma",
+    //   description: "Puma Women's T-Shirt (Pink)",
+    //   category: "tshirt",
+    //   rating: "★★★★★",
+    //   price: "299/$",
+    // },
+    // {
+    //   id: 10,
+    //   image: "src/assets/download.jpeg",
+    //   brandname: "Adidas",
+    //   description: "Adidas 3-Stripes Hoodie (Black)",
+    //   category: "hoodie",
+    //   rating: "★★★★",
+    //   price: "599/$",
+    // },
+    // {
+    //   id: 11,
+    //   image: "src/assets/download.jpeg",
+    //   brandname: "Nike",
+    //   description: "Nike Women's Shoes (Pink/White)",
+    //   category: "shoes",
+    //   rating: "★★★★",
+    //   price: "109/$",
+    // },
+    // {
+    //   id: 12,
+    //   image: "src/assets/download.jpeg",
+    //   brandname: "Levi's",
+    //   description: "Levi's 511 Slim Fit Jeans (Black)",
+    //   category: "jeans",
+    //   rating: "★★★★★",
+    //   price: "99/$",
+    // },
   ];
 
   return (
@@ -121,10 +121,12 @@ function App() {
       {console.log("working")}
       <Header />
       <div className="flex flex-wrap justify-evenly ">
-        <Card  {...data[0]}/>
-        <Card  {...data[1]}/>
-        <Card  {...data[2]}/>
-        <Card  {...data[3]}/>
+        {
+          data.map((item)=>{
+            // eslint-disable-next-line react/jsx-key
+            return <Card {...item} key={item.id}/>
+          })
+        }
       </div>
     </>
   );
