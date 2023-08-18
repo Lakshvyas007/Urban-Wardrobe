@@ -2,9 +2,16 @@ import Card from "./Card";
 import { DATA } from "../constants";
 import { useState } from "react";
 
+const filterData = (searchText, data) => {
+  const filterData = data.filter((data) => data.category.includes(searchText)
+  )
+  return filterData
+  };
+
 const Body = () => {
   const [searchText, setSearchText] = useState("");
-  const [data, setData]= useState(DATA)
+  const [data, setData] = useState(DATA);
+
 
   return (
     <>
@@ -17,9 +24,10 @@ const Body = () => {
             setSearchText(e.target.value);
           }}
         />
-        <button className="btn"
+        <button
           onClick={() => {
-            filterData();
+           const info = filterData(searchText, data);
+           setData(info);
           }}
         >
           Search
