@@ -23,7 +23,7 @@ const Card = ({image, brandname, description, price, rating }) => {
           Rating {rating} 
           </p>
         </div>
-          <button className="mx-2 mt-3 px-3 py-1.5 bg-inheritrounded-lg bg-blue-700">
+          <button className="pt-0.5 pb-0.5 mt-2 rounded-md">
             Buy Now 
           </button>
       </div>
