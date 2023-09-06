@@ -1,9 +1,16 @@
-const About = () =>{
-    return (
-        <div>
-            About
-        </div>
-    )
-}
+import Footer from "./Footer";
+import Header from "./Header";
 
-export default About
+const About = () => {
+  return (
+    <>
+      <Header />
+      <div>
+        <h1>This is About Us Page</h1>
+      </div>
+      <Footer />
+    </>
+  );
+};
+
+export default About;

@@ -1,17 +1,17 @@
-// import './App.css'
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import Body from "./components/Body";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from "./components/Home";
+import About from "./components/About";
 
-
+const AppRouter = createBrowserRouter([
+  { path: "/", element: <Home /> },
+  { path: "/about", element: <About /> },
+]);
 
 function App() {
   return (
     <>
-      <Header />
-      <Body />
-      <Footer />
-    </>
+      <RouterProvider  router={AppRouter}/>
+      </>
   );
 }
 
