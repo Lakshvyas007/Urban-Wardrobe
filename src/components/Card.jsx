@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom";
 // eslint-disable-next-line react/prop-types
-const Card = ({image, brandname, description, price, rating }) => {
 
+const Card = ({id, image, brandname, description, price, rating }) => {
   return (
     <div className="text-center mt-5 w-80 h-auto m-3 flex justify-center items-center flex-col bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
       <div className="p-1 mt-1 ">
@@ -24,7 +25,7 @@ const Card = ({image, brandname, description, price, rating }) => {
           </p>
         </div>
           <button className="pt-0.5 pb-0.5 mt-2 rounded-md">
-            Buy Now 
+          <Link to={`/product/${id-1}`}>Buy Now </Link>  
           </button>
       </div>
     </div>
