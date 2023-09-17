@@ -1,36 +1,17 @@
 import Card from "./Card";
 import { useEffect, useState } from "react";
 import Shimmer from "./shimmer";
-
-const filterData = (searchText, items) => {
-  const filteredItems = items.filter((item) =>
-    item?.category?.toLowerCase()?.includes(searchText.toLowerCase())
-  );
-  return filteredItems;
-};
+import useData from "../utils/useData";
+import { filterData } from "../utils/helper";
 
 const Body = () => {
   const [searchText, setSearchText] = useState("");
+  const allData = useData();
   const [filteredData, setFilteredData] = useState([]);
-  const [allData, setAllData] = useState([]);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch("http://localhost:3001/api/data");
-        if (!response.ok) {
-          throw new Error("Failed to fetch");
-        }
-        const data = await response.json();
-        setAllData(data);
-        setFilteredData(data);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
+    setFilteredData(allData);
+  }, [allData]);
 
   return allData.length === 0 ? (
     <Shimmer />

@@ -40,8 +40,7 @@ const AppRouter = createBrowserRouter([
         element: <ProductPage />,
       },
     ],
-  },
-  // { path: "/about", element: <About /> },
+  }
 ]);
 
 function App() {

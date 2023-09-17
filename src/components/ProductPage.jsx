@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
-import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import useData from "../utils/useData";
 
 const ProductCard = ({ productData, id }) => {
   //   const { image, brandname, price, rating, description } = productData;
@@ -40,23 +40,7 @@ const ProductCard = ({ productData, id }) => {
 
 const ProductPage = () => {
   const { id } = useParams();
-  const [productData, setProductData] = useState([]);
-  const fetchData = async () => {
-    try {
-      const response = await fetch("http://localhost:3001/api/data");
-      if (!response.ok) {
-        throw new Error("Failed to fetch");
-      }
-      const data = await response.json();
-      setProductData(data);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
+  const productData = useData();
 
   //   console.log(productData[id]);
   return (
@@ -68,3 +52,5 @@ const ProductPage = () => {
 };
 
 export default ProductPage;
+
+
